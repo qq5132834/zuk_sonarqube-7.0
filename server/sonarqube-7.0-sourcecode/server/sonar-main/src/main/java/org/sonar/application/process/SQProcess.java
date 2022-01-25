@@ -31,7 +31,8 @@ import org.sonar.process.ProcessId;
 import static java.lang.String.format;
 import static java.util.Objects.requireNonNull;
 
-public class SQProcess {
+//public class SQProcess {
+public final class SQProcess {
 
   public static final long DEFAULT_WATCHER_DELAY_MS = 500L;
   private static final Logger LOG = LoggerFactory.getLogger(SQProcess.class);
