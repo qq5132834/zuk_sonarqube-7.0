@@ -21,6 +21,9 @@ package org.sonar.server.app;
 
 import com.google.common.collect.ImmutableMap;
 import java.io.File;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.sonar.process.sharedmemoryfile.DefaultProcessCommands;
 import org.sonar.process.MinimumViableSystem;
 import org.sonar.process.Monitored;
@@ -29,11 +32,12 @@ import org.sonar.process.ProcessId;
 import org.sonar.process.Props;
 
 public class WebServer implements Monitored {
+
   public static final String PROPERTY_SHARED_PATH = "process.sharedDir";
 
   private final File sharedDir;
   private final EmbeddedTomcat tomcat;
-
+  private static Logger logger = LoggerFactory.getLogger(WebServer.class);
   WebServer(Props props) {
     new MinimumViableSystem()
       .checkWritableTempDir()
@@ -84,6 +88,16 @@ public class WebServer implements Monitored {
    * Can't be started as is. Needs to be bootstrapped by sonar-application
    */
   public static void main(String[] args) {
+    //参考：resources/sq-process-properties 中的内容
+    args = new String[]{"D:\\development\\github\\zuk-sonarqube-7.0\\server\\sonarqube-7.0-sourcecode\\server\\sonar-server\\src\\main\\resources\\sq-process-properties"};
+    if(args != null){
+      for (String arg : args) {
+        logger.info(arg);
+      }
+      //通过sleep进程阻塞启动，这样只需要启动ES进程，方便web的本地调试功能
+//      try { Thread.sleep(9999999); Thread.sleep(9999999); }catch (Exception e) {e.printStackTrace();}
+    }
+
     ProcessEntryPoint entryPoint = ProcessEntryPoint.createForArguments(args);
     Props props = entryPoint.getProps();
     new WebServerProcessLogging().configure(props);
