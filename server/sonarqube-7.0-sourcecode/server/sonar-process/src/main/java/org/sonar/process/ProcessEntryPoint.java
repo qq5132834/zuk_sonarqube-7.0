@@ -117,11 +117,14 @@ public class ProcessEntryPoint implements Stoppable {
       commands.setUp();
 
       if (lifecycle.tryToMoveTo(Lifecycle.State.STARTED)) {
-        Monitored.Status newStatus = waitForOperational(status);
-        if (newStatus == Monitored.Status.OPERATIONAL && lifecycle.tryToMoveTo(Lifecycle.State.OPERATIONAL)) {
-          commands.setOperational();
-        }
+        // 修改
+//        Monitored.Status newStatus = waitForOperational(status);
+//        if (newStatus == Monitored.Status.OPERATIONAL && lifecycle.tryToMoveTo(Lifecycle.State.OPERATIONAL)) {
+//          commands.setOperational();
+//        }
+//        monitored.awaitStop();
 
+        commands.setOperational();
         monitored.awaitStop();
       }
     } else {
