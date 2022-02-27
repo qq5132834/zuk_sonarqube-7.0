@@ -1,33 +1,34 @@
 #Temporary properties file for command [web]
-#Tue Feb 08 15:02:21 CST 2022
-sonar.jdbc.driverPath=D\:\\development\\github\\zuk-sonarqube-7.0\\server\\sonarqube-7.0\\lib\\jdbc\\h2\\h2-1.3.176.jar
-sonar.embeddedDatabase.port=9092
+#Sun Feb 27 19:30:41 CST 2022
+sonar.jdbc.driverPath=D\:\\development\\github\\zuk-sonarqube-7.0\\server\\sonarqube-7.0\\sonarqube-7.0\\lib\\jdbc\\mysql\\mysql-connector-java-5.1.42.jar
 sonar.wrapped=true
+sonar.jdbc.username=root
 sonar.cluster.node.port=9003
 sonar.cluster.name=sonarqube
-sonar.path.web=D\:\\development\\github\\zuk-sonarqube-7.0\\server\\sonarqube-7.0-sourcecode\\server\\sonar-server\\src\\main\\resources\\web
+sonar.path.web=D\:\\development\\github\\zuk-sonarqube-7.0\\server\\sonarqube-7.0\\sonarqube-7.0\\web
 sonar.web.javaOpts=-Xmx512m -Xms128m -XX\:+HeapDumpOnOutOfMemoryError
 process.terminationTimeout=60000
 sonar.search.port=9001
 sonar.cluster.web.startupLeader=true
-sonar.path.home=D\:\\development\\github\\zuk-sonarqube-7.0\\server\\sonarqube-7.0
-sonar.path.temp=D\:\\development\\github\\zuk-sonarqube-7.0\\server\\sonarqube-7.0-sourcecode\\server\\sonar-server\\src\\main\\resources\\temp
-sonar.cluster.node.name=sonarqube-b5f190bf-ef03-4f22-9227-3de1053cff1c
+sonar.path.home=D\:\\development\\github\\zuk-sonarqube-7.0\\server\\sonarqube-7.0\\sonarqube-7.0
+sonar.path.temp=D\:\\development\\github\\zuk-sonarqube-7.0\\server\\sonarqube-7.0\\sonarqube-7.0\\temp
+sonar.cluster.node.name=sonarqube-15053688-4424-44f6-b8c2-ae05ee076ffb
 sonar.search.host=127.0.0.1
-sonar.path.data=D\:\\development\\github\\zuk-sonarqube-7.0\\server\\sonarqube-7.0\\data
+sonar.path.data=D\:\\development\\github\\zuk-sonarqube-7.0\\server\\sonarqube-7.0\\sonarqube-7.0\\data
 sonar.jdbc.minEvictableIdleTimeMillis=600000
 sonar.jdbc.minIdle=2
-process.sharedDir=D\:\\development\\github\\zuk-sonarqube-7.0\\server\\sonarqube-7.0-sourcecode\\server\\sonar-server\\src\\main\\resources\\temp
+process.sharedDir=D\:\\development\\github\\zuk-sonarqube-7.0\\server\\sonarqube-7.0\\sonarqube-7.0\\temp
 sonar.ce.javaAdditionalOpts=
 sonar.web.javaAdditionalOpts=
 sonar.jdbc.maxActive=60
 process.key=web
 sonar.ce.javaOpts=-Xmx512m -Xms128m -XX\:+HeapDumpOnOutOfMemoryError
-sonar.path.logs=D\:\\development\\github\\zuk-sonarqube-7.0\\server\\sonarqube-7.0-sourcecode\\server\\sonar-server\\src\\main\\resources\\logs
+sonar.path.logs=D\:\\development\\github\\zuk-sonarqube-7.0\\server\\sonarqube-7.0\\sonarqube-7.0\\logs
 sonar.jdbc.timeBetweenEvictionRunsMillis=30000
 sonar.jdbc.maxIdle=5
 sonar.search.javaAdditionalOpts=
-sonar.jdbc.url=jdbc\:h2\:tcp\://127.0.0.1\:9092/sonar
+sonar.jdbc.url=jdbc\:mysql\://localhost\:3306/sonar?useUnicode\=true&characterEncoding\=utf8&rewriteBatchedStatements\=true&useConfigs\=maxPerformance&useSSL\=false
+sonar.jdbc.password=root
 sonar.cluster.enabled=false
 process.index=2
 sonar.search.javaOpts=-Xms512m -Xmx512m -XX\:+HeapDumpOnOutOfMemoryError
