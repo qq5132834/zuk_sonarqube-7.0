@@ -28,9 +28,12 @@ public enum ScannerVersion {
   private String version;
 
   ScannerVersion() {
-    try (Scanner scanner = new Scanner(getClass().getResourceAsStream("/version.txt"), "UTF-8")) {
-      this.version = scanner.next();
-    }
+    //读取sonar-scanner-cli的版本号，在version.txt文件的内容只有一行数据：4.3-SNAPSHOT
+    System.out.println("读取sonar-scanner-cli的版本号");
+    this.version = "4.3-SNAPSHOT";
+//    try (Scanner scanner = new Scanner(getClass().getResourceAsStream("/version.txt"), "UTF-8")) {
+//      this.version = scanner.next();
+//    }
   }
 
   public static String version() {
