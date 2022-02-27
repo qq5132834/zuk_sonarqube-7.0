@@ -62,26 +62,9 @@ public class Main {
   public static void main(String[] args) {
 
     args = new String[]{
-      "sonar.host.url=http://localhost:9000",
-      "sonar.sourceEncoding=UTF-8",
-      "sonar.projectKey=helloworld",
-      "sonar.sources=D:/development/github/zuk-sonarqube-7.0/server/sonar-scanner-cli-4.3.0.2102/sonar-scanner-cli-4.3.0.2102/",
-      "-X"
+      "-X" //输出debug日志
     };
-
-    //
-    for(String arg : args){
-      System.out.println(arg);
-    }
-
     Logs logs = new Logs(System.out, System.err);
-
-    //
-    for(String arg : args){
-      logs.info(arg);
-    }
-
-
     Exit exit = new Exit();
     Cli cli = new Cli(exit, logs).parse(args);
     Main main = new Main(exit, cli, new Conf(cli, logs, System.getenv()), new ScannerFactory(logs), logs);

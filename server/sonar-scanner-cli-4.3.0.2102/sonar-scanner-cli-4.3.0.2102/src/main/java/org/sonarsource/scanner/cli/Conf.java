@@ -26,11 +26,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.MessageFormat;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Properties;
+import java.util.*;
 import javax.annotation.Nullable;
 import org.sonarsource.scanner.api.Utils;
 
@@ -95,6 +91,23 @@ class Conf {
     knownPropsAtThatPoint.putAll(loadEnvironmentProperties());
     knownPropsAtThatPoint.putAll(cli.properties());
 
+    System.out.println("从此处读取sonar-scanner.properties配置文件");
+    logger.info("从此处读取sonar-scanner.properties配置文件");
+    if(true){
+      Properties properties = new Properties();
+      //
+      properties.setProperty("sonar.host.url", "http://localhost:9000");
+      //
+      properties.setProperty("sonar.sourceEncoding", "UTF-8");
+      //项目名
+      properties.setProperty("sonar.projectKey", "hello-" + UUID.randomUUID().toString().replaceAll("-", "").substring(5));
+      //扫描文件路径
+      properties.setProperty("sonar.sources", "D:/development/github/zuk-sonarqube-7.0/server/sonar-scanner-cli-4.3.0.2102/sonar-scanner-cli-4.3.0.2102/");
+      //idea中启动必须填写
+      properties.setProperty("sonar.java.binaries", "D:/development/github/zuk-sonarqube-7.0/server/sonar-scanner-cli-4.3.0.2102/sonar-scanner-cli-4.3.0.2102/target/classes");
+      logger.info(properties.toString());
+      return properties;
+    }
     Path settingsFile = locatePropertiesFile(knownPropsAtThatPoint, SCANNER_HOME, "conf/sonar-scanner.properties",
       SCANNER_SETTINGS);
     if (settingsFile != null && Files.isRegularFile(settingsFile)) {
