@@ -39,6 +39,10 @@ import org.sonar.squidbridge.annotations.RuleTemplate;
 /**
  * Declare rule metadata in server repository of rules. 
  * That allows to list the rules in the page "Rules".
+ *
+ * 在服务器规则存储库中声明规则元数据。
+ * 这样就可以在“规则”页面中列出规则。
+ *
  */
 public class MyJavaRulesDefinition implements RulesDefinition {
 
@@ -51,9 +55,11 @@ public class MyJavaRulesDefinition implements RulesDefinition {
 
   @Override
   public void define(Context context) {
+    System.out.println("huangliao.MyJavaRulesDefinition.define");
+
     NewRepository repository = context
       .createRepository(REPOSITORY_KEY, "java")
-      .setName("MyCompany Custom Repository");
+      .setName("huangliao-MyCompany-Custom-Repository");
 
     for (Class<? extends JavaCheck> check : RulesList.getChecks()) {
       new RulesDefinitionAnnotationLoader().load(repository, check);

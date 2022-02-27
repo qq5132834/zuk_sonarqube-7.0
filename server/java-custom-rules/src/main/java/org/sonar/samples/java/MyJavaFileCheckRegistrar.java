@@ -34,25 +34,24 @@ import org.sonarsource.api.sonarlint.SonarLintSide;
 public class MyJavaFileCheckRegistrar implements CheckRegistrar {
 
   /**
-   * Register the classes that will be used to instantiate checks during analysis.
+   * 注册用于分析的检查类。
    */
   @Override
   public void register(RegistrarContext registrarContext) {
-    // Call to registerClassesForRepository to associate the classes with the correct repository key
-    registrarContext.registerClassesForRepository(MyJavaRulesDefinition.REPOSITORY_KEY, checkClasses(), testCheckClasses());
+    System.out.println("huangliao.MyJavaFileCheckRegistrar.register");
+    registrarContext.registerClassesForRepository(
+            MyJavaRulesDefinition.REPOSITORY_KEY,
+            this.checkClasses(),
+            this.testCheckClasses());
   }
 
-  /**
-   * Lists all the main checks provided by the plugin
-   */
-  public static List<Class<? extends JavaCheck>> checkClasses() {
+
+  private static List<Class<? extends JavaCheck>> checkClasses() {
     return RulesList.getJavaChecks();
   }
 
-  /**
-   * Lists all the test checks provided by the plugin
-   */
-  public static List<Class<? extends JavaCheck>> testCheckClasses() {
+  private static List<Class<? extends JavaCheck>> testCheckClasses() {
     return RulesList.getJavaTestChecks();
   }
+
 }
