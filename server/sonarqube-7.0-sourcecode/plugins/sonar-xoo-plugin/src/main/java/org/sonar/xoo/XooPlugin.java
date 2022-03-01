@@ -25,6 +25,7 @@ import org.sonar.api.SonarProduct;
 import org.sonar.api.config.PropertyDefinition;
 import org.sonar.api.resources.Qualifiers;
 import org.sonar.api.utils.Version;
+import org.sonar.xoo.demo.DemoSensor;
 import org.sonar.xoo.lang.*;
 import org.sonar.xoo.rule.*;
 
@@ -100,7 +101,7 @@ public class XooPlugin implements Plugin {
       //OverallCoverageSensor.class,
 
       // Analysis errors
-      AnalysisErrorSensor.class
+      AnalysisErrorSensor.class,
 
       // Tests
       //TestExecutionSensor.class,
@@ -109,6 +110,7 @@ public class XooPlugin implements Plugin {
       // Other
       //XooProjectBuilder.class,
       //XooPostJob.class
+            DemoSensor.class
     );
 
     if (context.getRuntime().getProduct() != SonarProduct.SONARLINT) {
