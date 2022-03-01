@@ -28,8 +28,6 @@ import org.sonar.api.utils.Version;
 import org.sonar.xoo.coverage.ItCoverageSensor;
 import org.sonar.xoo.coverage.OverallCoverageSensor;
 import org.sonar.xoo.coverage.UtCoverageSensor;
-import org.sonar.xoo.extensions.XooPostJob;
-import org.sonar.xoo.extensions.XooProjectBuilder;
 import org.sonar.xoo.lang.*;
 import org.sonar.xoo.rule.*;
 
@@ -105,15 +103,16 @@ public class XooPlugin implements Plugin {
       OverallCoverageSensor.class,
 
       // Analysis errors
-      AnalysisErrorSensor.class,
+      AnalysisErrorSensor.class
 
       // Tests
       //TestExecutionSensor.class,
       //CoveragePerTestSensor.class,
 
       // Other
-      XooProjectBuilder.class,
-      XooPostJob.class);
+      //XooProjectBuilder.class,
+      //XooPostJob.class
+    );
 
     if (context.getRuntime().getProduct() != SonarProduct.SONARLINT) {
       context.addExtensions(MeasureSensor.class,
