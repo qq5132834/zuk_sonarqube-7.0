@@ -32,8 +32,6 @@ import org.sonar.xoo.extensions.XooPostJob;
 import org.sonar.xoo.extensions.XooProjectBuilder;
 import org.sonar.xoo.lang.*;
 import org.sonar.xoo.rule.*;
-import org.sonar.xoo.scm.XooBlameCommand;
-import org.sonar.xoo.scm.XooScmProvider;
 
 /**
  * Plugin entry-point, as declared in pom.xml.
@@ -69,8 +67,8 @@ public class XooPlugin implements Plugin {
       XooFakeImporterWithMessages.class,
 
       // SCM
-      XooScmProvider.class,
-      XooBlameCommand.class,
+      //XooScmProvider.class,
+      //XooBlameCommand.class,
 
       // CPD
       XooCpdMapping.class,
