@@ -18,3 +18,8 @@
 2022.02.11 22:07:05 INFO  es[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.join.ParentJoinPlugin]
 2022.02.11 22:07:05 INFO  es[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.percolator.PercolatorPlugin]
 2022.02.11 22:07:05 INFO  es[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.transport.Netty4Plugin]
+2022.02.27 21:14:18 INFO  es[][o.e.p.PluginsService] no modules loaded
+2022.02.27 21:14:18 INFO  es[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.index.reindex.ReindexPlugin]
+2022.02.27 21:14:18 INFO  es[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.join.ParentJoinPlugin]
+2022.02.27 21:14:18 INFO  es[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.percolator.PercolatorPlugin]
+2022.02.27 21:14:18 INFO  es[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.transport.Netty4Plugin]

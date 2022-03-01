@@ -1,29 +1,29 @@
 #Temporary properties file for command [web]
-#Sun Feb 27 19:30:41 CST 2022
-sonar.jdbc.driverPath=D\:\\development\\github\\zuk-sonarqube-7.0\\server\\sonarqube-7.0\\sonarqube-7.0\\lib\\jdbc\\mysql\\mysql-connector-java-5.1.42.jar
+#Tue Mar 01 17:43:40 CST 2022
+sonar.jdbc.driverPath=C\:\\Users\\51328\\Desktop\\sonarqube-7.0\\sonarqube-7.0\\lib\\jdbc\\mysql\\mysql-connector-java-5.1.42.jar
 sonar.wrapped=true
 sonar.jdbc.username=root
 sonar.cluster.node.port=9003
 sonar.cluster.name=sonarqube
-sonar.path.web=D\:\\development\\github\\zuk-sonarqube-7.0\\server\\sonarqube-7.0\\sonarqube-7.0\\web
+sonar.path.web=C\:\\Users\\51328\\Desktop\\sonarqube-7.0\\sonarqube-7.0\\web
 sonar.web.javaOpts=-Xmx512m -Xms128m -XX\:+HeapDumpOnOutOfMemoryError
 process.terminationTimeout=60000
 sonar.search.port=9001
 sonar.cluster.web.startupLeader=true
-sonar.path.home=D\:\\development\\github\\zuk-sonarqube-7.0\\server\\sonarqube-7.0\\sonarqube-7.0
-sonar.path.temp=D\:\\development\\github\\zuk-sonarqube-7.0\\server\\sonarqube-7.0\\sonarqube-7.0\\temp
-sonar.cluster.node.name=sonarqube-15053688-4424-44f6-b8c2-ae05ee076ffb
+sonar.path.home=C\:\\Users\\51328\\Desktop\\sonarqube-7.0\\sonarqube-7.0
+sonar.path.temp=C\:\\Users\\51328\\Desktop\\sonarqube-7.0\\sonarqube-7.0\\temp
+sonar.cluster.node.name=sonarqube-178a73a6-20b7-4b51-9f2c-61cf4d2cffc2
 sonar.search.host=127.0.0.1
-sonar.path.data=D\:\\development\\github\\zuk-sonarqube-7.0\\server\\sonarqube-7.0\\sonarqube-7.0\\data
+sonar.path.data=C\:\\Users\\51328\\Desktop\\sonarqube-7.0\\sonarqube-7.0\\data
 sonar.jdbc.minEvictableIdleTimeMillis=600000
 sonar.jdbc.minIdle=2
-process.sharedDir=D\:\\development\\github\\zuk-sonarqube-7.0\\server\\sonarqube-7.0\\sonarqube-7.0\\temp
+process.sharedDir=C\:\\Users\\51328\\Desktop\\sonarqube-7.0\\sonarqube-7.0\\temp
 sonar.ce.javaAdditionalOpts=
 sonar.web.javaAdditionalOpts=
 sonar.jdbc.maxActive=60
 process.key=web
 sonar.ce.javaOpts=-Xmx512m -Xms128m -XX\:+HeapDumpOnOutOfMemoryError
-sonar.path.logs=D\:\\development\\github\\zuk-sonarqube-7.0\\server\\sonarqube-7.0\\sonarqube-7.0\\logs
+sonar.path.logs=C\:\\Users\\51328\\Desktop\\sonarqube-7.0\\sonarqube-7.0\\logs
 sonar.jdbc.timeBetweenEvictionRunsMillis=30000
 sonar.jdbc.maxIdle=5
 sonar.search.javaAdditionalOpts=
