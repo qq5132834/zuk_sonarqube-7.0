@@ -100,9 +100,11 @@ class Conf {
       //
       properties.setProperty("sonar.sourceEncoding", "UTF-8");
       //项目名
-      properties.setProperty("sonar.projectKey", "hello-" + UUID.randomUUID().toString().replaceAll("-", "").substring(5));
+      properties.setProperty("sonar.projectKey", "hello-" + UUID.randomUUID().toString().replaceAll("-", "").substring(0, 5));
+      String scannerFile = "D:/development/github/zuk-sonarqube-7.0/server/sonar-scanner-cli-4.3.0.2102/sonar-scanner-cli-4.3.0.2102/java-scanner-file/";
+      System.out.println("sonar客户端扫描文件夹是：" + scannerFile);
       //扫描文件路径
-      properties.setProperty("sonar.sources", "D:/development/github/zuk-sonarqube-7.0/server/sonar-scanner-cli-4.3.0.2102/sonar-scanner-cli-4.3.0.2102/");
+      properties.setProperty("sonar.sources", scannerFile);
       //idea中启动必须填写
       properties.setProperty("sonar.java.binaries", "D:/development/github/zuk-sonarqube-7.0/server/sonar-scanner-cli-4.3.0.2102/sonar-scanner-cli-4.3.0.2102/target/classes");
       logger.info(properties.toString());
