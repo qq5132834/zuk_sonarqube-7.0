@@ -43,13 +43,15 @@ public class JavaPlugin implements Plugin {
     if (context.getRuntime().getProduct() == SonarProduct.SONARLINT) {
       builder.add(JavaSonarLintClasspath.class);
     } else {
-      builder.addAll(SurefireExtensions.getExtensions());
-      builder.addAll(JaCoCoExtensions.getExtensions());
-      builder.add(JavaSonarWayProfile.class);
-      builder.add(JavaClasspath.class);
+      PrintUtils.print(this.getClass(), "define.else");
+      //builder.addAll(SurefireExtensions.getExtensions());
+      //builder.addAll(JaCoCoExtensions.getExtensions());
+      //builder.add(JavaSonarWayProfile.class);
+      //builder.add(JavaClasspath.class);
     }
-    builder.addAll(JavaClasspathProperties.getProperties());
+    //builder.addAll(JavaClasspathProperties.getProperties());
     builder.add(
+      JavaClasspath.class,
       JavaTestClasspath.class,
       Java.class,
       PropertyDefinition.builder(Java.FILE_SUFFIXES_KEY)
@@ -61,12 +63,14 @@ public class JavaPlugin implements Plugin {
         .subCategory("General")
         .onQualifiers(Qualifiers.PROJECT)
         .build(),
-      JavaRulesDefinition.class,
+
       SonarComponents.class,
       DefaultJavaResourceLocator.class,
       JavaSquidSensor.class,
       PostAnalysisIssueFilter.class,
-      XmlFileSensor.class);
+      //XmlFileSensor.class,
+      JavaRulesDefinition.class
+    );
     context.addExtensions(builder.build());
   }
 

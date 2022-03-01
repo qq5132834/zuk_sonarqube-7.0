@@ -60,7 +60,7 @@ public final class SurefireExtensions {
             .subCategory("JUnit")
             .build(),
 
-        SurefireSensor.class,
+        //SurefireSensor.class,
         SurefireJavaParser.class);
   }
 

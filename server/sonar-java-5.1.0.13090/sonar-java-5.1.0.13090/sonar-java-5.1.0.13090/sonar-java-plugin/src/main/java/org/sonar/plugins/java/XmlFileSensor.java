@@ -51,6 +51,7 @@ public class XmlFileSensor implements Sensor {
 
   @Override
   public void execute(SensorContext context) {
+    System.out.println("huangliao.execute.start" + this.getClass().getName());
     if (hasXmlFiles()) {
       Iterable<InputFile> xmlInputFiles = getXmlFiles();
       // make xml files visible in SQ UI, when XML plugin is not installed
@@ -59,6 +60,7 @@ public class XmlFileSensor implements Sensor {
       sonarComponents.setSensorContext(context);
       new XmlAnalyzer(sonarComponents, sonarComponents.checkClasses()).scan(toFile(xmlInputFiles));
     }
+    System.out.println("huangliao.execute.end" + this.getClass().getName());
   }
 
   private boolean hasXmlFiles() {

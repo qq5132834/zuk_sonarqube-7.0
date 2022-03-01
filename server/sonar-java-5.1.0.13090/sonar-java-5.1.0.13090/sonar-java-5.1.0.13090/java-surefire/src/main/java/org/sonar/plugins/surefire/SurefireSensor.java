@@ -56,8 +56,10 @@ public class SurefireSensor implements Sensor {
 
   @Override
   public void execute(SensorContext context) {
+    System.out.println("huangliao.execute.start" + this.getClass().getName());
     List<File> dirs = SurefireUtils.getReportsDirectories(settings, fs, pathResolver);
     collect(context, dirs);
+    System.out.println("huangliao.execute.end" + this.getClass().getName());
   }
 
   protected void collect(SensorContext context, List<File> reportsDirs) {

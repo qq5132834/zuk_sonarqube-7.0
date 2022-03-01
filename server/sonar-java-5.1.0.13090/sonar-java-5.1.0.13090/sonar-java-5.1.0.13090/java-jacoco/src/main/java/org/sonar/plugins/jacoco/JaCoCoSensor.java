@@ -58,6 +58,8 @@ public class JaCoCoSensor implements Sensor {
 
   @Override
   public void execute(SensorContext context) {
+    System.out.println("huangliao.execute.start" + this.getClass().getName());
+
     if (context.config().hasKey(REPORT_MISSING_FORCE_ZERO)) {
       LOG.warn("Property '{}' is deprecated and its value will be ignored.", REPORT_MISSING_FORCE_ZERO);
     }
@@ -75,6 +77,9 @@ public class JaCoCoSensor implements Sensor {
       JaCoCoReportMerger.mergeReports(reportMerged, reportPaths.toArray(new File[0]));
     }
     new UnitTestAnalyzer(reportMerged, perspectives, javaResourceLocator, javaClasspath).analyse(context);
+
+    System.out.println("huangliao.execute.end" + this.getClass().getName());
+
   }
 
   private static Set<File> getReportPaths(SensorContext context) {

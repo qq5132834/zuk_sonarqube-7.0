@@ -60,8 +60,13 @@ public class JavaSquidSensor implements Sensor {
   private final NoSonarFilter noSonarFilter;
   private final PostAnalysisIssueFilter postAnalysisIssueFilter;
 
-  public JavaSquidSensor(SonarComponents sonarComponents, FileSystem fs,
-                         DefaultJavaResourceLocator javaResourceLocator, Configuration settings, NoSonarFilter noSonarFilter, PostAnalysisIssueFilter postAnalysisIssueFilter) {
+  public JavaSquidSensor(SonarComponents sonarComponents,
+                         FileSystem fs,
+                         DefaultJavaResourceLocator javaResourceLocator,
+                         Configuration settings,
+                         NoSonarFilter noSonarFilter,
+                         PostAnalysisIssueFilter postAnalysisIssueFilter) {
+    PrintUtils.print(this.getClass(), "construct.funcation.");
     this.noSonarFilter = noSonarFilter;
     this.sonarComponents = sonarComponents;
     this.fs = fs;
@@ -77,6 +82,9 @@ public class JavaSquidSensor implements Sensor {
 
   @Override
   public void execute(SensorContext context) {
+
+    PrintUtils.print(this.getClass(), "execute.start");
+
     javaResourceLocator.setSensorContext(context);
     sonarComponents.setSensorContext(context);
 
@@ -84,12 +92,15 @@ public class JavaSquidSensor implements Sensor {
       .addAll(CheckList.getJavaChecks())
       .addAll(CheckList.getDebugChecks())
       .build();
+
     sonarComponents.registerCheckClasses(CheckList.REPOSITORY_KEY, checks);
     sonarComponents.registerTestCheckClasses(CheckList.REPOSITORY_KEY, CheckList.getJavaTestChecks());
     Measurer measurer = new Measurer(fs, context, noSonarFilter);
     JavaSquid squid = new JavaSquid(getJavaVersion(), isXFileEnabled(), sonarComponents, measurer, javaResourceLocator, postAnalysisIssueFilter, sonarComponents.checkClasses());
     squid.scan(getSourceFiles(), getTestFiles());
     sonarComponents.saveAnalysisErrors();
+
+    PrintUtils.print(this.getClass(), "execute.end");
   }
 
   private Iterable<File> getSourceFiles() {
