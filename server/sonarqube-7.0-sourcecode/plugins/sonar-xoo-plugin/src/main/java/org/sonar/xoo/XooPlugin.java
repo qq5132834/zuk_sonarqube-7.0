@@ -25,9 +25,6 @@ import org.sonar.api.SonarProduct;
 import org.sonar.api.config.PropertyDefinition;
 import org.sonar.api.resources.Qualifiers;
 import org.sonar.api.utils.Version;
-import org.sonar.xoo.coverage.ItCoverageSensor;
-import org.sonar.xoo.coverage.OverallCoverageSensor;
-import org.sonar.xoo.coverage.UtCoverageSensor;
 import org.sonar.xoo.lang.*;
 import org.sonar.xoo.rule.*;
 
@@ -98,9 +95,9 @@ public class XooPlugin implements Plugin {
       OneVulnerabilityIssuePerModuleSensor.class,
 
       // Coverage
-      UtCoverageSensor.class,
-      ItCoverageSensor.class,
-      OverallCoverageSensor.class,
+      //UtCoverageSensor.class,
+      //ItCoverageSensor.class,
+      //OverallCoverageSensor.class,
 
       // Analysis errors
       AnalysisErrorSensor.class
