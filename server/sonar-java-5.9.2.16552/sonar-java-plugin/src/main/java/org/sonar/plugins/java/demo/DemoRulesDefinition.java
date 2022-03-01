@@ -39,12 +39,12 @@ public class DemoRulesDefinition implements RulesDefinition {
                 .createRepository(REPOSITORY_KEY, "java")
                 .setName("MyCompany Custom Repository");
 
-        for (Class<? extends JavaCheck> check : RulesList.getChecks()) {
-            System.out.println("huangliao.DemoRulesDefinition.check");
-            LOG.info("huangliao.DemoRulesDefinition.check");
-            new RulesDefinitionAnnotationLoader().load(repository, check);
-            newRule(check, repository);
-        }
+//        for (Class<? extends JavaCheck> check : RulesList.getChecks()) {
+//            System.out.println("huangliao.DemoRulesDefinition.check");
+//            LOG.info("huangliao.DemoRulesDefinition.check");
+//            new RulesDefinitionAnnotationLoader().load(repository, check);
+//            newRule(check, repository);
+//        }
         repository.done();
     }
 
