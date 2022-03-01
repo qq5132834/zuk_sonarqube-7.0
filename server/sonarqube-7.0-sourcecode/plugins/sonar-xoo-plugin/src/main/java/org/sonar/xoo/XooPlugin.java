@@ -30,47 +30,10 @@ import org.sonar.xoo.coverage.OverallCoverageSensor;
 import org.sonar.xoo.coverage.UtCoverageSensor;
 import org.sonar.xoo.extensions.XooPostJob;
 import org.sonar.xoo.extensions.XooProjectBuilder;
-import org.sonar.xoo.lang.CpdTokenizerSensor;
-import org.sonar.xoo.lang.LineMeasureSensor;
-import org.sonar.xoo.lang.MeasureSensor;
-import org.sonar.xoo.lang.SymbolReferencesSensor;
-import org.sonar.xoo.lang.SyntaxHighlightingSensor;
-import org.sonar.xoo.lang.XooCpdMapping;
-import org.sonar.xoo.lang.XooTokenizer;
-import org.sonar.xoo.rule.AnalysisErrorSensor;
-import org.sonar.xoo.rule.ChecksSensor;
-import org.sonar.xoo.rule.CreateIssueByInternalKeySensor;
-import org.sonar.xoo.rule.CustomMessageSensor;
-import org.sonar.xoo.rule.DeprecatedResourceApiSensor;
-import org.sonar.xoo.rule.HasTagSensor;
-import org.sonar.xoo.rule.MultilineIssuesSensor;
-import org.sonar.xoo.rule.NoSonarSensor;
-import org.sonar.xoo.rule.OneBlockerIssuePerFileSensor;
-import org.sonar.xoo.rule.OneBugIssuePerLineSensor;
-import org.sonar.xoo.rule.OneDayDebtPerFileSensor;
-import org.sonar.xoo.rule.OneIssueOnDirPerFileSensor;
-import org.sonar.xoo.rule.OneIssuePerDirectorySensor;
-import org.sonar.xoo.rule.OneIssuePerFileSensor;
-import org.sonar.xoo.rule.OneIssuePerLineSensor;
-import org.sonar.xoo.rule.OneIssuePerModuleSensor;
-import org.sonar.xoo.rule.OneIssuePerUnknownFileSensor;
-import org.sonar.xoo.rule.OneVulnerabilityIssuePerModuleSensor;
-import org.sonar.xoo.rule.RandomAccessSensor;
-import org.sonar.xoo.rule.SaveDataTwiceSensor;
-import org.sonar.xoo.rule.Xoo2BasicProfile;
-import org.sonar.xoo.rule.Xoo2SonarWayProfile;
-import org.sonar.xoo.rule.XooBasicProfile;
-import org.sonar.xoo.rule.XooBuiltInQualityProfilesDefinition;
-import org.sonar.xoo.rule.XooEmptyProfile;
-import org.sonar.xoo.rule.XooFakeExporter;
-import org.sonar.xoo.rule.XooFakeImporter;
-import org.sonar.xoo.rule.XooFakeImporterWithMessages;
-import org.sonar.xoo.rule.XooRulesDefinition;
-import org.sonar.xoo.rule.XooSonarWayProfile;
+import org.sonar.xoo.lang.*;
+import org.sonar.xoo.rule.*;
 import org.sonar.xoo.scm.XooBlameCommand;
 import org.sonar.xoo.scm.XooScmProvider;
-import org.sonar.xoo.test.CoveragePerTestSensor;
-import org.sonar.xoo.test.TestExecutionSensor;
 
 /**
  * Plugin entry-point, as declared in pom.xml.
@@ -147,8 +110,8 @@ public class XooPlugin implements Plugin {
       AnalysisErrorSensor.class,
 
       // Tests
-      TestExecutionSensor.class,
-      CoveragePerTestSensor.class,
+      //TestExecutionSensor.class,
+      //CoveragePerTestSensor.class,
 
       // Other
       XooProjectBuilder.class,
